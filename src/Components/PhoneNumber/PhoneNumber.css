@@ -1,6 +1,7 @@
 .numStyle{
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-bottom: 15px;
     display: inline-block;
     width: 80px;
     height: 80px;
@@ -10,9 +11,39 @@
     font-weight: bold;
     line-height: 80px;
     font-size: 30px;
-    margin-bottom: auto;
+    border:0;
+    outline: 0;
 }
 
 .padNumerColor{
     background-color: #E5E5E5;
 }
+
+.NUColor{
+    background-color: #ffffff;
+}
+
+.cancel {
+    background: #E5E5E5;
+    display: inline-block;
+    height: 32px;
+    margin-left: 30px;
+    margin-top: 23px;
+    position: relative;
+    width: 37px;
+    margin-right: 35px;
+    border:0;
+    outline: 0;
+    }
+.cancel:before {
+    border-bottom: 16px solid transparent;
+    border-top: 16px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 20px solid #E5E5E5;
+    content: "";
+    height: 0px;
+    left: -19px;
+    position: absolute;
+    top: 0px;
+    width: 0;
+    }

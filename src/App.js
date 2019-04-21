@@ -4,28 +4,48 @@ import { PhoneNumberList } from './Components/PhoneNumberList';
 import { CallNumber } from './Components/CallNumber';
 
 class App extends Component {
-  state = {
-    phonePad: [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#', '', '', ''],
-    CreateNumber: [],
+
+  constructor() {
+    super();
+    this.state ={
+      number: "",
+      phonePad: [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#', '', '', 'x'],
+    }
   }
 
-  handleCreate = () => {
-    console.log("callNumber");
+  handleCreate= (button) => {
+    // console.log('success');
+
+    if(button === "BS"){
+      this.backspace()
+    }else if(button === "NU"){
+      this.setState({
+        number: this.state.number
+      })
+    }else{
+      this.setState({
+        //number: (this.state.number + button).replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3")
+
+        //number: this.state.number.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3") + button
+        number: (this.state.number + button).replace(/^\d{2,3}-\d{3,4}-\d{4}$/)
+       //number: this.state.number + button
+      });
+  }
+    
+  }
+
+  backspace = () =>{
     this.setState({
-      ...this.state,
-      CreateNumber : this.CreateNumber
+      number: this.state.number.slice(0,-1)
     })
   }
 
   render() {
-    // const phonePad = [1,2,3,4,5,6,7,8,9,'*',0,'#'];
-    // console.log(phonePad);
 
     return (
       <div className="App">
-        <CallNumber />
+        <CallNumber number={this.state.number} />
         <PhoneNumberList onClick={this.handleCreate} padNum={this.state.phonePad}/>
-        
       </div>
     );
   }

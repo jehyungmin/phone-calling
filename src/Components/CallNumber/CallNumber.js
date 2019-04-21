@@ -1,9 +1,10 @@
 import React from 'react';
+import './CallNumber.css';
 
-const CallNumber = () => {
+const CallNumber = ({number}) => {
     return (
-        <div>
-            ======CallNumber=======
+        <div className="numberWindow">
+            <p>{number}</p>
         </div>
     );
 };
