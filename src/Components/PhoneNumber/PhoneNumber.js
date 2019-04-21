@@ -8,6 +8,8 @@ const PhoneNumber = ({ eachNum, onClick, name }) => {
         styleName = "NUColor numStyle "
     }else if(name === "BS") {
         styleName = "cancel"
+    }else if(name === "CALL") {
+        styleName = "callstyle numStyle"
     }else {
         styleName = "numStyle padNumerColor"
     }

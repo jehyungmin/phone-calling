@@ -2,7 +2,6 @@ import React from 'react';
 import './CallNumber.css';
 
 const CallNumber = ({number}) => {
-    console.log(number.length)
 
         let phoneFormat = 'number';
         if(number.length === 11){
