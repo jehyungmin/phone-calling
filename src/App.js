@@ -10,6 +10,7 @@ class App extends Component {
     this.state ={
       number: "",
       phonePad: [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#', '', '', 'x'],
+      nnn: "hhh",
     }
   }
 
@@ -27,19 +28,18 @@ class App extends Component {
         //number: (this.state.number + button).replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3")
 
         //number: this.state.number.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3") + button
-        number: (this.state.number + button).replace(/^\d{2,3}-\d{3,4}-\d{4}$/)
+        number: this.state.number + button
+        
        //number: this.state.number + button
       });
+    }
   }
-    
-  }
-
+  
   backspace = () =>{
     this.setState({
       number: this.state.number.slice(0,-1)
     })
   }
-
   render() {
 
     return (
