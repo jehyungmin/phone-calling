@@ -2,8 +2,6 @@ import React from 'react';
 import './PhoneNumber.css';
 
 const PhoneNumber = ({ eachNum, onClick, name, number }) => { 
-    console.log(number.length);
-
 
     let styleName = "numStyle padNumerColor"
     if(number.length === 0 && name === "BS"){
@@ -19,7 +17,6 @@ const PhoneNumber = ({ eachNum, onClick, name, number }) => {
             styleName = "numStyle padNumerColor"
         }
     }
-    
 
     return (
         <div>

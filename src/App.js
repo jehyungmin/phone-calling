@@ -22,14 +22,25 @@ class App extends Component {
       this.setState({
         number: this.state.number
       })
+    }else if(button === "CALL"){
+      //alert(this.state.number)
+      const {number} = this.state;
+      let phoneFormat = 'number';
+      if (number.length === 11) {
+        phoneFormat = number.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')
+      } else if (number.length === 8) {
+        phoneFormat = number.replace(/(\d{4})(\d{4})/, '$1-$2')
+      } else {
+        if (number.indexOf('02') === 0) {
+          phoneFormat = number.replace(/(\d{2})(\d{3,4})(\d{4})/, '$1-$2-$3')
+        } else {
+          phoneFormat = number.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')
+        }
+      }
+      alert(phoneFormat)
     }else{
       this.setState({
-        //number: (this.state.number + button).replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3")
-
-        //number: this.state.number.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, "$1-$2-$3") + button
         number: this.state.number + button
-        
-       //number: this.state.number + button
       });
     }
   }
