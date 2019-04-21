@@ -1,18 +1,25 @@
 import React from 'react';
 import './PhoneNumber.css';
 
-const PhoneNumber = ({ eachNum, onClick, name }) => { 
+const PhoneNumber = ({ eachNum, onClick, name, number }) => { 
+    console.log(number.length);
+
 
     let styleName = "numStyle padNumerColor"
-    if(name === "NU"){
-        styleName = "NUColor numStyle "
-    }else if(name === "BS") {
-        styleName = "cancel"
-    }else if(name === "CALL") {
-        styleName = "callstyle numStyle"
+    if(number.length === 0 && name === "BS"){
+        styleName = "numStyle nullStyle"
     }else {
-        styleName = "numStyle padNumerColor"
+        if (name === "NU") {
+            styleName = "NUColor numStyle "
+        } else if (name === "BS") {
+            styleName = "cancel"
+        } else if (name === "CALL") {
+            styleName = "callstyle numStyle"
+        } else {
+            styleName = "numStyle padNumerColor"
+        }
     }
+    
 
     return (
         <div>

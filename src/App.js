@@ -10,7 +10,6 @@ class App extends Component {
     this.state ={
       number: "",
       phonePad: [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#', '', '', 'x'],
-      nnn: "hhh",
     }
   }
 
@@ -45,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <CallNumber number={this.state.number} />
-        <PhoneNumberList onClick={this.handleCreate} padNum={this.state.phonePad}/>
+        <PhoneNumberList number={this.state.number} onClick={this.handleCreate} padNum={this.state.phonePad}/>
       </div>
     );
   }
