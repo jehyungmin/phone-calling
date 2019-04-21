@@ -1,0 +1,18 @@
+.numStyle{
+    display: inline;
+    margin-right: 10px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+    line-height: 80px;
+    font-size: 30px;
+    margin-bottom: auto;
+}
+
+.padNumerColor{
+    background-color: #E5E5E5;
+}

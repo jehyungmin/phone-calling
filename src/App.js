@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { PhoneNumberList } from './Components/PhoneNumberList';
+import { CallNumber } from './Components/CallNumber';
 
 class App extends Component {
+  state = {
+    phonePad: [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#', '', '', ''],
+    CreateNumber: [],
+  }
+
+  handleCreate = () => {
+    console.log("callNumber");
+    this.setState({
+      ...this.state,
+      CreateNumber : this.CreateNumber
+    })
+  }
+
   render() {
+    // const phonePad = [1,2,3,4,5,6,7,8,9,'*',0,'#'];
+    // console.log(phonePad);
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <CallNumber />
+        <PhoneNumberList onClick={this.handleCreate} padNum={this.state.phonePad}/>
+        
       </div>
     );
   }
